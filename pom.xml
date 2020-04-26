@@ -13,7 +13,7 @@
 	<name>example-server</name>
 	<modules>
 		<module>example-server-deploy</module>
-		<module>example-server-biz</module>
+		<module>example-server-core</module>
 	</modules>
 	<properties>
 		<package.name>example_server</package.name>

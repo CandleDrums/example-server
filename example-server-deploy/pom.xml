@@ -12,7 +12,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.candledrums.example</groupId>
-			<artifactId>example-server-biz</artifactId>
+			<artifactId>example-server-core</artifactId>
 		</dependency>
 	</dependencies>
     <build>

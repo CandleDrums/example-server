@@ -7,8 +7,8 @@
 		<artifactId>example-server</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>example-server-biz</artifactId>
-	<name>example-server-biz</name>
+	<artifactId>example-server-core</artifactId>
+	<name>example-server-core</name>
 	<dependencies>
 		<dependency>
 			<groupId>com.candledrums.example</groupId>
