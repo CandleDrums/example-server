@@ -5,7 +5,7 @@
  * @Date [date]
  * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
  */
-package com.cds.server.example.biz.query;
+package com.cds.example.server.biz.query;
 
 import java.util.List;
 
