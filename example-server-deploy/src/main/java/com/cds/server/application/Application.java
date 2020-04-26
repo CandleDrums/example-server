@@ -27,7 +27,7 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties
 @SpringBootApplication
 @EnableFeignClients("com.cds")
 @ComponentScan(basePackages = {"com.cds"})
-@MapperScan(basePackages = {"com.cds.dep.example.dal.dao"})
+@MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

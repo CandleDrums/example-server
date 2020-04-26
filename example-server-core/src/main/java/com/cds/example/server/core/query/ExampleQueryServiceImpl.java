@@ -1,11 +1,11 @@
 /**
- * @Project example-server-biz
- * @package com.cds.example.server.biz.query
+ * @Project example-server-core
+ * @package com.cds.example.server.core.query
  * @Class ExampleQueryServiceImpl.java
  * @Date [date]
  * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
  */
-package com.cds.example.server.biz.query;
+package com.cds.example.server.core.query;
 
 import java.util.List;
 
@@ -23,8 +23,8 @@ import com.cds.base.common.page.Page;
 import com.cds.base.common.page.PageResult;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.core.impl.GeneralQueryServiceImpl;
-import com.cds.dep.example.biz.service.ExampleService;
-import com.cds.dep.example.dal.model.ExampleDO;
+import com.cds.example.dep.biz.service.ExampleService;
+import com.cds.example.dep.dal.model.ExampleDO;
 
 /**
  * @Description [name]查询Service实现

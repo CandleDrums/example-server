@@ -1,11 +1,11 @@
 /**
- * @Project example-server-biz
- * @package com.cds.example.server.biz.manage
+ * @Project example-server-core
+ * @package com.cds.example.server.core.manage
  * @Class ExampleManageServiceImpl.java
  * @Date [date]
  * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
  */
-package com.cds.example.server.biz.manage;
+package com.cds.example.server.core.manage;
 
 import javax.validation.constraints.NotNull;
 
@@ -14,9 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cds.api.example.manage.ExampleManageService;
+import com.cds.api.example.model.ExampleVO;
 import com.cds.base.biz.service.GeneralService;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.core.impl.GeneralManageServiceImpl;
+import com.cds.example.dep.biz.service.ExampleService;
+import com.cds.example.dep.dal.model.ExampleDO;
 
 /**
  * @Description [name]管理Service实现
