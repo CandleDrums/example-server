@@ -29,7 +29,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.candledrums.example</groupId>
-				<artifactId>example-server-biz</artifactId>
+				<artifactId>example-server-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
