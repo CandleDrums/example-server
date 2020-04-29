@@ -2,8 +2,8 @@
  * @Project example-server-deploy
  * @Package com.cds.server.application
  * @Class Application.java
- * @Date Apr 23, 2020 4:47:02 PM
- * @Copyright (c) 2020 CandleDrums.com All Right Reserved.
+ * @Date [date]
+ * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
  */
 package com.cds.server.application;
 
@@ -15,6 +15,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @Description 启动
@@ -28,9 +30,10 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties
 @EnableFeignClients("com.cds")
 @ComponentScan(basePackages = {"com.cds"})
 @MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
+@Slf4j
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-        System.out.println("启动成功");
+        log.info("启动成功");
     }
 }

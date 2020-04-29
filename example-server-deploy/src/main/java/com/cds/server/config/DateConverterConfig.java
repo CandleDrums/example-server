@@ -1,9 +1,9 @@
 /**
- * @Project account-center-deploy
- * @Package com.youwe.deploy.application.config
+ * @Project example-server-deploy
+ * @Package com.cds.server.config
  * @Class DateConverterConfig.java
- * @Date Oct 21, 2019 11:38:19 AM
- * @Copyright (c) 2019 YOUWE All Right Reserved.
+ * @Date [date]
+ * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
  */
 package com.cds.server.config;
 
@@ -24,12 +24,10 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import com.cds.base.common.exception.YouWeBizException;
 
 /**
- * @Description 日期转换配置
+ * @Description 时间处理
  * @Notes 未填写备注
- * @author liming
- * @Date Oct 21, 2019 11:38:19 AM
- * @version 1.0
- * @since JDK 1.8
+ * @author [author]
+ * @Date [date]
  */
 @Configuration
 public class DateConverterConfig {
