@@ -10,6 +10,8 @@ package com.cds.server.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
+
 import io.swagger.annotations.ApiOperation;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -27,6 +29,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
+@EnableKnife4j
 public class Swagger2Config {
 
     @Bean
@@ -36,7 +39,8 @@ public class Swagger2Config {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Account Center API").description("账户中心API列表").version("1.0").build();
+        return new ApiInfoBuilder().title("Example Server Api Doc").description("Example服务Api文档").version("1.0")
+            .build();
     }
 
 }
