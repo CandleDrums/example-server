@@ -8,6 +8,9 @@ spring:
    datasource:
       type: com.zaxxer.hikari.HikariDataSource
       driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://182.92.152.103:3306/example?useAffectedRows=true
+      username: ENC(0qRXOPtFBy+7MIHTZIV814bfhMgfS7r/h+V+NYdNbCs=)
+      password: ENC(IELi2qvDl/kP7MHqiV874s37KP5AkZcyJdVWSaXhTag/McxtgSewnA==)
 # Hikari 连接池配置
       hikari:
 # 最小空闲连接数量
@@ -39,7 +42,7 @@ spring:
 #配置文件格式
             format: YAML
 #配置基本文件，默认值config
-            prefix: jack
+            prefix: cds
 #配置文件名，默认data
             data-key: data
          discovery:
@@ -61,7 +64,7 @@ spring:
             health-check-critical-timeout: 30s
 jasypt:
    encryptor:
-      password: example-server
+      password: www.candledrums.com
 #mybaits-plus配置，修改主键类型，mapper.xml、type 别名等
 #所有环境公用配置
 #加密encryptor
