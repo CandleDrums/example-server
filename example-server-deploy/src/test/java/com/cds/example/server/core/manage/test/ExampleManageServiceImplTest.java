@@ -29,19 +29,19 @@ class ExampleManageServiceImplTest {
 
     /**
      * Test method for
-     * {@link com.cds.example.server.core.manage.ExampleManageServiceImpl#add(com.cds.api.example.model.ExampleVO)}.
+     * {@link com.cds.example.server.core.manage.ExampleManageServiceImpl#add(com.cds.api.example.model.TableVO)}.
      */
     @Test
-    void testAddExampleVO() {
+    void testAddTableVO() {
         fail("Not yet implemented");
     }
 
     /**
      * Test method for
-     * {@link com.cds.example.server.core.manage.ExampleManageServiceImpl#modify(com.cds.api.example.model.ExampleVO)}.
+     * {@link com.cds.example.server.core.manage.ExampleManageServiceImpl#modify(com.cds.api.example.model.TableVO)}.
      */
     @Test
-    void testModifyExampleVO() {
+    void testModifyTableVO() {
         fail("Not yet implemented");
     }
 

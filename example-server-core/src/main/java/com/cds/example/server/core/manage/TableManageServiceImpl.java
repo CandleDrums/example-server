@@ -1,7 +1,7 @@
 /**
  * @Project example-server-core
  * @package com.cds.example.server.core.manage
- * @Class ExampleManageServiceImpl.java
+ * @Class TableManageServiceImpl.java
  * @Date [date]
  * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
  */
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cds.api.example.manage.ExampleManageService;
-import com.cds.api.example.model.ExampleVO;
+import com.cds.api.example.manage.TableManageService;
+import com.cds.api.example.model.TableVO;
 import com.cds.base.biz.service.GeneralService;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.core.impl.GeneralManageServiceImpl;
-import com.cds.example.dep.biz.service.ExampleService;
-import com.cds.example.dep.dal.model.ExampleDO;
+import com.cds.example.dep.biz.service.TableService;
+import com.cds.example.dep.dal.model.TableDO;
 
 /**
  * @Description [name]管理Service实现
@@ -29,18 +29,18 @@ import com.cds.example.dep.dal.model.ExampleDO;
  * @Date [date]
  */
 @RestController
-public class ExampleManageServiceImpl extends GeneralManageServiceImpl<ExampleVO> implements ExampleManageService {
+public class TableManageServiceImpl extends GeneralManageServiceImpl<TableVO> implements TableManageService {
 
     @Autowired
-    private ExampleService exampleService;
+    private TableService tableService;
 
     @Override
-    public ResponseResult<ExampleVO> add(@RequestBody @NotNull ExampleVO example) {
+    public ResponseResult<TableVO> add(@RequestBody @NotNull TableVO example) {
         return super.add(example);
     }
 
     @Override
-    public ResponseResult<ExampleVO> modify(@RequestBody @NotNull ExampleVO t) {
+    public ResponseResult<TableVO> modify(@RequestBody @NotNull TableVO t) {
         return super.modify(t);
     }
 
@@ -51,8 +51,8 @@ public class ExampleManageServiceImpl extends GeneralManageServiceImpl<ExampleVO
     }
 
     @Override
-    protected GeneralService<ExampleVO, ExampleDO> getService() {
-        return exampleService;
+    protected GeneralService<TableVO, TableDO> getService() {
+        return tableService;
     }
 
 }
