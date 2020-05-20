@@ -10,7 +10,7 @@ package com.cds.server.config;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.springframework.cloud.netflix.feign.FeignFormatterRegistrar;
+import org.springframework.cloud.openfeign.FeignFormatterRegistrar;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.stereotype.Component;

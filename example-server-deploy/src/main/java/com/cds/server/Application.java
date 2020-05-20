@@ -1,11 +1,11 @@
 /**
  * @Project example-server-deploy
- * @Package com.cds.server.application
+ * @Package com.cds.server
  * @Class Application.java
  * @Date [date]
  * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
  */
-package com.cds.server.application;
+package com.cds.server;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

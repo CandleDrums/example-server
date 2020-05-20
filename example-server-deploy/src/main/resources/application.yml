@@ -56,7 +56,7 @@ spring:
             instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 #配置服务注册
             register: true
-#服务停止时取消注册，http://www.imooc.com/article/286883?block_id=tuijian_wz
+#服务停止时取消注册
             deregister: true
 #表示注册时使用ip而不是hostname
             prefer-ip-address: true
@@ -76,3 +76,5 @@ mybatis-plus:
       map-underscore-to-camel-case: true
 #capital-mode: true
       cache-enabled: true
+logging:
+  config: classpath:logback.xml
