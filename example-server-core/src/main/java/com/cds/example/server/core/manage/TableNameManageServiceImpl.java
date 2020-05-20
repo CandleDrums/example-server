@@ -1,7 +1,7 @@
 /**
  * @Project example-server-core
  * @package com.cds.example.server.core.manage
- * @Class TableManageServiceImpl.java
+ * @Class TableNameManageServiceImpl.java
  * @Date [date]
  * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
  */
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cds.api.example.manage.TableManageService;
-import com.cds.api.example.model.TableVO;
+import com.cds.api.example.manage.TableNameManageService;
+import com.cds.api.example.model.TableNameVO;
 import com.cds.base.biz.service.GeneralService;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.core.impl.GeneralManageServiceImpl;
-import com.cds.example.dep.biz.service.TableService;
-import com.cds.example.dep.dal.model.TableDO;
+import com.cds.example.dep.biz.service.TableNameService;
+import com.cds.example.dep.dal.model.TableNameDO;
 
 /**
  * @Description [name]管理Service实现
@@ -29,18 +29,18 @@ import com.cds.example.dep.dal.model.TableDO;
  * @Date [date]
  */
 @RestController
-public class TableManageServiceImpl extends GeneralManageServiceImpl<TableVO> implements TableManageService {
+public class TableNameManageServiceImpl extends GeneralManageServiceImpl<TableNameVO> implements TableNameManageService {
 
     @Autowired
-    private TableService tableService;
+    private TableNameService tableService;
 
     @Override
-    public ResponseResult<TableVO> add(@RequestBody @NotNull TableVO example) {
+    public ResponseResult<TableNameVO> add(@RequestBody @NotNull TableNameVO example) {
         return super.add(example);
     }
 
     @Override
-    public ResponseResult<TableVO> modify(@RequestBody @NotNull TableVO t) {
+    public ResponseResult<TableNameVO> modify(@RequestBody @NotNull TableNameVO t) {
         return super.modify(t);
     }
 
@@ -51,7 +51,7 @@ public class TableManageServiceImpl extends GeneralManageServiceImpl<TableVO> im
     }
 
     @Override
-    protected GeneralService<TableVO, TableDO> getService() {
+    protected GeneralService<TableNameVO, TableNameDO> getService() {
         return tableService;
     }
 
