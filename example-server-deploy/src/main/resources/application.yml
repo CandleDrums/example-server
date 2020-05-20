@@ -1,6 +1,7 @@
 server:
 #配置启动端口
    port: 10001
+##############spring 配置开始##############
 spring:
 #应用名称
    application:
@@ -9,8 +10,8 @@ spring:
       type: com.zaxxer.hikari.HikariDataSource
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://182.92.152.103:3306/example?useAffectedRows=true
-      username: ENC(0qRXOPtFBy+7MIHTZIV814bfhMgfS7r/h+V+NYdNbCs=)
-      password: ENC(IELi2qvDl/kP7MHqiV874s37KP5AkZcyJdVWSaXhTag/McxtgSewnA==)
+      username: g21121
+      password: 1234qwer
 # Hikari 连接池配置
       hikari:
 # 最小空闲连接数量
@@ -62,13 +63,16 @@ spring:
             prefer-ip-address: true
 #健康检查失败多长时间取消注册
             health-check-critical-timeout: 30s
+   main:
+      allow-bean-definition-overriding: true
+##############spring 配置结束##############
 jasypt:
    encryptor:
       password: www.candledrums.com
 #mybaits-plus配置，修改主键类型，mapper.xml、type 别名等
+mybatis-plus:
 #所有环境公用配置
 #加密encryptor
-mybatis-plus:
    mapper-locations: classpath:mapper/*.xml
    typeAliasesPackage: com.cds.example.dep.dal.model
 #数据库大写下划线转换
@@ -77,4 +81,4 @@ mybatis-plus:
 #capital-mode: true
       cache-enabled: true
 logging:
-  config: classpath:logback.xml
+   config: classpath:logback.xml
