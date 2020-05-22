@@ -29,30 +29,30 @@ import com.cds.example.dep.dal.model.TableNameDO;
  * @Date [date]
  */
 @RestController
-public class TableNameManageServiceImpl extends GeneralManageServiceImpl<TableNameVO> implements TableNameManageService {
+public class TableNameManageServiceImpl extends GeneralManageServiceImpl<TableNameVO>
+    implements TableNameManageService {
 
     @Autowired
-    private TableNameService tableService;
+    private TableNameService tableNameService;
 
     @Override
-    public ResponseResult<TableNameVO> add(@RequestBody @NotNull TableNameVO example) {
-        return super.add(example);
+    public ResponseResult<TableNameVO> add(@RequestBody @NotNull TableNameVO tableName) {
+        return super.add(tableName);
     }
 
     @Override
-    public ResponseResult<TableNameVO> modify(@RequestBody @NotNull TableNameVO t) {
-        return super.modify(t);
+    public ResponseResult<TableNameVO> modify(@RequestBody @NotNull TableNameVO tableName) {
+        return super.modify(tableName);
     }
 
     @Override
     public ResponseResult<Boolean> delete(@RequestParam(value = "num", required = true) @NotNull String num) {
-
         return super.delete(num);
     }
 
     @Override
     protected GeneralService<TableNameVO, TableNameDO> getService() {
-        return tableService;
+        return tableNameService;
     }
 
 }

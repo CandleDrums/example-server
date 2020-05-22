@@ -13,7 +13,7 @@
 	<name>example-server</name>
 	<modules>
 		<module>example-server-core</module>
-		<module>example-server-deploy</module>
+		<module>example-server-boot</module>
 	</modules>
 	<properties>
 		<package.name>example_server</package.name>
@@ -24,7 +24,7 @@
 		<dependencies>
 			<dependency>
 				<groupId>com.candledrums.example</groupId>
-				<artifactId>example-server-deploy</artifactId>
+				<artifactId>example-server-boot</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

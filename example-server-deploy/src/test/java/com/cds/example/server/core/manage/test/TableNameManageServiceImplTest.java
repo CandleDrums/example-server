@@ -17,7 +17,8 @@ import org.junit.jupiter.api.Test;
  * @author [author]
  * @Date [date]
  */
-class ExampleManageServiceImplTest {
+
+public class TableNameManageServiceImplTest {
 
     /**
      * Test method for {@link com.cds.example.server.core.manage.ExampleManageServiceImpl#delete(java.lang.String)}.

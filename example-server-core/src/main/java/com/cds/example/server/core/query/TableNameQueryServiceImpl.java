@@ -36,7 +36,7 @@ import com.cds.example.dep.dal.model.TableNameDO;
 public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableNameVO> implements TableNameQueryService {
 
     @Autowired
-    private TableNameService tableService;
+    private TableNameService tableNameService;
 
     @Override
     public ResponseResult<TableNameVO> detail(@RequestParam(value = "num", required = true) @NotNull String num) {
@@ -44,13 +44,13 @@ public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableName
     }
 
     @Override
-    public ResponseResult<Boolean> contains(@RequestBody @NotNull TableNameVO example) {
-        return super.contains(example);
+    public ResponseResult<Boolean> contains(@RequestBody @NotNull TableNameVO tableName) {
+        return super.contains(tableName);
     }
 
     @Override
-    public ResponseResult<List<TableNameVO>> queryAll(@RequestBody @NotNull TableNameVO example) {
-        return super.queryAll(example);
+    public ResponseResult<List<TableNameVO>> queryAll(@RequestBody @NotNull TableNameVO tableName) {
+        return super.queryAll(tableName);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableName
 
     @Override
     protected GeneralService<TableNameVO, TableNameDO> getService() {
-        return tableService;
+        return tableNameService;
     }
 
 }
