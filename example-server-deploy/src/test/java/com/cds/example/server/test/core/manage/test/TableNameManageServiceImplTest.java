@@ -5,7 +5,7 @@
  * @Date [date]
  * @Copyright (c) 2020 CandleDrums.com All Right Reserved.
  */
-package com.cds.example.server.core.manage.test;
+package com.cds.example.server.test.core.manage.test;
 
 import static org.junit.jupiter.api.Assertions.fail;
 

@@ -1,6 +1,6 @@
 server:
 #配置启动端口
-   port: 10001
+   port: 9999
 ##############spring 配置开始##############
 spring:
 #应用名称
@@ -10,7 +10,7 @@ spring:
       type: com.zaxxer.hikari.HikariDataSource
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://182.92.152.103:3306/example?useAffectedRows=true
-      username: g21121
+      username: root
       password: 1234qwer
 # Hikari 连接池配置
       hikari:
