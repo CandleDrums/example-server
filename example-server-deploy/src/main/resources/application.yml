@@ -67,7 +67,7 @@ spring:
       allow-bean-definition-overriding: true
    jackson:
       time-zone: GMT+8
-      date-format: yyyy-MM-dd HH:mm:ss
+      date-format: yyyy-MM-dd hh:mm:ss
 ##############spring 配置结束##############
 jasypt:
    encryptor:
