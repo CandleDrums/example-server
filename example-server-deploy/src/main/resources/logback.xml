@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false" scan="false">
-    <springProperty scop="context" name="spring.application.name" source="spring.application.name"
-                    defaultValue="merchant-center"/>
-    <property name="log.path" value="logs/${spring.application.name}"/>
-    <!-- Console log output -->
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <springProperty scop="context" name="application.name" source="spring.application.name"
+                    defaultValue="example_server"/>
+    <property name="log.path" value="/work/logs/${application.name}"/>
+    
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] [%logger{50}] %file:%line %X{X-B3-TraceId:-} %X{X-B3-SpanId:-} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Log file error output -->
-    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log.path}/error.log</file>
+    <appender name="infoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/${application.name}.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${log.path}/%d{yyyy-MM}/error.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <fileNamePattern>${log.path}/%d{yyyy-MM}/%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] [%logger{50}] %file:%line %X{X-B3-TraceId:-} %X{X-B3-SpanId:-} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/${application.name}_error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/%d{yyyy-MM}/%d{yyyy-MM-dd}.%i.error.log.gz</fileNamePattern>
             <maxFileSize>100MB</maxFileSize>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -25,23 +36,10 @@
             <level>ERROR</level>
         </filter>
     </appender>
-
-    <appender name="STDOUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log.path}/stdout.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${log.path}/%d{yyyy-MM}/debug.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
-            <maxFileSize>100MB</maxFileSize>
-            <maxHistory>30</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] [%logger{50}] %file:%line %X{X-B3-TraceId:-} %X{X-B3-SpanId:-} - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-
-    <appender name="LOGSTASH"
+    
+    <appender name="logstashAppender"
               class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>172.17.7.31:6006</destination>
+        <destination>127.0.0.1:6014</destination>
         <!-- encoder必须配置,有多种可选 -->
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
@@ -52,7 +50,7 @@
                     <pattern>
                         {
                         "level": "%-5level",
-                        "app_name": "${spring.application.name}",
+                        "app_name": "${application.name}",
                         "trace_id": "%X{X-B3-TraceId:-}",
                         "span_id": "%X{X-B3-SpanId:-}",
                         "thread": "%thread",
@@ -70,9 +68,10 @@
         </connectionStrategy>
     </appender>
 
+
     <!-- Level: FATAL 0  ERROR 3  WARN 4  INFO 6  DEBUG 7 -->
     <root level="INFO">
-        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="infoAppender"/>
     </root>
 
 
