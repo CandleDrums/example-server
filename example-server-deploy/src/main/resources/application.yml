@@ -65,6 +65,9 @@ spring:
             health-check-critical-timeout: 30s
    main:
       allow-bean-definition-overriding: true
+   jackson:
+      time-zone: GMT+8
+      date-format: yyyy-MM-dd HH:mm:ss
 ##############spring 配置结束##############
 jasypt:
    encryptor:
