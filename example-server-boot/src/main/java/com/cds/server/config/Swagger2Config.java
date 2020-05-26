@@ -1,5 +1,5 @@
 /**
- * @Project example-server-deploy
+ * @Project example-server-boot
  * @Package com.cds.server.config
  * @Class Swagger2Config.java
  * @Date [date]

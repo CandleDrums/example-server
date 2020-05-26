@@ -1,5 +1,5 @@
 /**
- * @Project example-server-deploy
+ * @Project example-server-boot
  * @Package com.cds.server
  * @Class Application.java
  * @Date [date]
