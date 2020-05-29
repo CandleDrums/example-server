@@ -8,7 +8,7 @@ spring:
       name: example-server
    datasource:
       type: com.zaxxer.hikari.HikariDataSource
-      driver-class-name: com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://182.92.152.103:3306/example?useAffectedRows=true
       username: root
       password: 1234qwer
@@ -68,6 +68,8 @@ spring:
    jackson:
       time-zone: GMT+8
       date-format: yyyy-MM-dd hh:mm:ss
+      serialization: 
+         FAIL_ON_EMPTY_BEANS: false
 ##############spring 配置结束##############
 jasypt:
    encryptor:
