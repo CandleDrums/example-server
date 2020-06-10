@@ -3,7 +3,7 @@
  * @Package com.cds.server
  * @Class Application.java
  * @Date [date]
- * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
+ * @Copyright (c) 2019 CandleDrumS.com All Right Reserved
  */
 package com.cds.server;
 
@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
@@ -27,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @EnableEncryptableProperties
 @EnableDiscoveryClient
 @SpringBootApplication
+@EnableAsync
 @EnableFeignClients("com.cds")
 @ComponentScan(basePackages = {"com.cds"})
 @MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})

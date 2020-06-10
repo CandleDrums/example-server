@@ -3,7 +3,7 @@
  * @package com.cds.example.server.core.query
  * @Class TableNameQueryServiceImpl.java
  * @Date [date]
- * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
+ * @Copyright (c) 2019 CandleDrumS.com All Right Reserved
  */
 package com.cds.example.server.core.query;
 
@@ -26,6 +26,8 @@ import com.cds.base.core.impl.GeneralQueryServiceImpl;
 import com.cds.example.dep.biz.service.TableNameService;
 import com.cds.example.dep.dal.model.TableNameDO;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @Description [name]查询Service实现
  * @Notes 未填写备注
@@ -33,6 +35,7 @@ import com.cds.example.dep.dal.model.TableNameDO;
  * @Date [date]
  */
 @RestController
+@Slf4j
 public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableNameVO> implements TableNameQueryService {
 
     @Autowired

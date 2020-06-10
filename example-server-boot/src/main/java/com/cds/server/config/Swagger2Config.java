@@ -3,7 +3,7 @@
  * @Package com.cds.server.config
  * @Class Swagger2Config.java
  * @Date [date]
- * @Copyright (c) 2019 CandleDrums.com All Right Reserved.
+ * @Copyright (c) 2019 CandleDrumS.com All Right Reserved
  */
 package com.cds.server.config;
 
