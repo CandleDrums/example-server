@@ -3,7 +3,7 @@
  * @package com.cds.example.server.core.manage
  * @Class TableNameManageServiceImpl.java
  * @Date [date]
- * @Copyright (c) 2019 CandleDrumS.com All Right Reserved.
+ * @Copyright [copyright]
  */
 package com.cds.example.server.core.manage;
 
