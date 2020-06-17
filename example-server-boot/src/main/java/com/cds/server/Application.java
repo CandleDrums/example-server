@@ -8,6 +8,7 @@
 package com.cds.server;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -34,8 +35,17 @@ import lombok.extern.slf4j.Slf4j;
 @MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
 @Slf4j
 public class Application {
+
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-        log.info("启动成功");
+        // 关闭banner
+        SpringApplication springApplication = new SpringApplication(Application.class);
+        springApplication.setBannerMode(Banner.Mode.OFF);
+        springApplication.run(args);
+        log.info("------------------------------------------------");
+        log.info("  ___   _   _    ___    ___    ___   ___   ___ ");
+        log.info(" / __| | | | |  / __|  / __|  / _ \\ / __| / __|");
+        log.info(" \\__ \\ | |_| | | (__  | (__  |  __/ \\__ \\ \\__ \\");
+        log.info(" |___/  \\__,_|  \\___|  \\___|  \\___| |___/ |___/");
+        log.info("------------------------------------------------");
     }
 }
