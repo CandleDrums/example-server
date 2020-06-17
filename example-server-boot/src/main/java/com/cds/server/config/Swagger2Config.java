@@ -41,7 +41,7 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("Example Server Api Doc")
-            .contact(new Contact("李明", "http://www.candledrums.com", "ming.li@mail.candledrums.com"))
+            .contact(new Contact("ming.li", "http://www.candledrums.com", "ming.li@mail.candledrums.com"))
             .description("Example服务Api文档").version("1.0").build();
     }
 
