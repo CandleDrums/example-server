@@ -16,6 +16,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +35,7 @@ import lombok.extern.slf4j.Slf4j;
 @ComponentScan(basePackages = {"com.cds"})
 @MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
 @Slf4j
+@EnableApolloConfig
 public class Application {
 
     public static void main(String[] args) {
