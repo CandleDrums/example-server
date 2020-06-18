@@ -39,11 +39,12 @@ import lombok.extern.slf4j.Slf4j;
 public class Application {
 
     public static void main(String[] args) {
-        // 关闭banner
         SpringApplication springApplication = new SpringApplication(Application.class);
+        // 关闭banner
         springApplication.setBannerMode(Banner.Mode.OFF);
-        springApplication.run(args);
+        // 允许类名重复
         springApplication.setAllowBeanDefinitionOverriding(true);
+        springApplication.run(args);
         log.info("------------------------------------------------");
         log.info("  ___   _   _    ___    ___    ___   ___   ___ ");
         log.info(" / __| | | | |  / __|  / __|  / _ \\ / __| / __|");
