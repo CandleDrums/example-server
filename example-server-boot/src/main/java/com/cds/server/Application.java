@@ -43,6 +43,7 @@ public class Application {
         SpringApplication springApplication = new SpringApplication(Application.class);
         springApplication.setBannerMode(Banner.Mode.OFF);
         springApplication.run(args);
+        springApplication.setAllowBeanDefinitionOverriding(true);
         log.info("------------------------------------------------");
         log.info("  ___   _   _    ___    ___    ___   ___   ___ ");
         log.info(" / __| | | | |  / __|  / __|  / _ \\ / __| / __|");

@@ -9,6 +9,3 @@ apollo:
         eagerLoad:
             enabled: true
     namespaces: application-global,application
-spring:
-    main:
-        allow-bean-definition-overriding: true
