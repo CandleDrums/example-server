@@ -2,13 +2,13 @@
 <configuration debug="false" scan="false">
     <springProperty scop="context" name="spring.application.name" source="spring.application.name"
                     defaultValue="example_server"/>
-    <springProperty scop="context" name="logging.path" source="logging.path"
+    <springProperty scop="context" name="logPath" source="log.path"
                     defaultValue="/work/logs"/>
-    <springProperty scop="context" name="logging.level" source="logging.level"
+    <springProperty scop="context" name="logLevel" source="log.level"
                     defaultValue="INFO"/>
-    <springProperty scop="context" name="logging.appender" source="logging.appender"
+    <springProperty scop="context" name="logAppender" source="log.appender"
                     defaultValue="CONSOLE"/>
-    <property name="log.path" value="${log.path}/${spring.application.name}"/>
+    <property name="log.path" value="${logPath}/${spring.application.name}"/>
     
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -75,8 +75,8 @@
 
 
     <!-- Level: FATAL 0  ERROR 3  WARN 4  INFO 6  DEBUG 7 -->
-    <root level="${logging.level}">
-        <appender-ref ref="${logging.appender}"/>
+    <root level="${logLevel}">
+        <appender-ref ref="${logAppender}"/>
     </root>
 
 
