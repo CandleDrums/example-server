@@ -1,7 +1,6 @@
-
+#apollo相关配置，可以在运行时单独指定
 app:
     id: example-server
-#apollo配置，可以在运行时直接指定
 apollo:
     meta: http://127.0.0.1:7777
     bootstrap:
