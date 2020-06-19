@@ -44,7 +44,9 @@ public class Application {
         springApplication.setBannerMode(Banner.Mode.OFF);
         // 允许类名重复
         springApplication.setAllowBeanDefinitionOverriding(true);
+        // 启动
         springApplication.run(args);
+        // 启动成功
         log.info("------------------------------------------------");
         log.info("  ___   _   _    ___    ___    ___   ___   ___ ");
         log.info(" / __| | | | |  / __|  / __|  / _ \\ / __| / __|");
