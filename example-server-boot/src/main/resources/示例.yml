@@ -8,7 +8,7 @@
 #4、最后，运行项目时指定相应的启动参数，例如：java -jar -Xms256m -Xmx256m example_server.jar -Denv=DEV -Dapollo.meta=http://127.0.0.1:8080
 
 #以下是apollo client相关参数
-#这里可以配置自己的环境，如DEV/SIT/FAT/UAT/PRO等，也可以配置为LOCAL，如果配置为LOCAL则从本地文件读取，配置文件路径为项目的classpath:/META-INF/config/xxx.properties
+#这里可以配置自己的环境，如DEV/SIT/FAT/UAT/PRO等，也可以配置为LOCAL，如果配置为LOCAL则从本地文件读取，配置文件路径为项目的classpath:/META-INF/config/相应namespace.properties
 #-Denv=DEV
 #env 环境对应的meta-service地址
 #-Dapollo.meta=http://127.0.0.1:8080
@@ -26,7 +26,7 @@ apollo:
         enabled: true
         eagerLoad:
             enabled: true
-    namespaces: application.yml,logback-spring
+    namespaces: application-global,application
 server:
 #配置启动端口
     port: 9999
