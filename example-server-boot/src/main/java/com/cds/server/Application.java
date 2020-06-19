@@ -22,7 +22,7 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @Description 启动
+ * @Description 启动项目
  * @Notes 未填写备注
  * @author [author]
  * @Date [date]
