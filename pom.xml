@@ -17,7 +17,6 @@
 	</modules>
 	<properties>
 		<package.name>example_server</package.name>
-		<APP_NAME>example-server</APP_NAME>
 		<dep.version>1.0.0-SNAPSHOT</dep.version>
 	</properties>
 	<dependencyManagement>
