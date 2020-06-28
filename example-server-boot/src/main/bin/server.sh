@@ -2,12 +2,13 @@
 export BUILD_ID=cds
 
 #----------------------------------------------↓变量区↓----------------------------------------------#
-#操作类型
+#操作类型：start/stop/restart/status
 OPERATION=$1
-#执行文件名，例如：example_server.jar)
-JAR_NAME=""
+#执行文件名，例如：example_server.jar
+#JAR_NAME=""时，自动搜索当前目录下唯一jar包
+JAR_NAME="example_server.jar"
 #虚拟机参数，例如：-Xms256m -Xmx256m
-VM_OPTIONS=""
+VM_OPTIONS="-Xms256m -Xmx256m"
 #springboot 配置文件指定
 #例如：dev/test/pro等，对应application-dev.yml/application-test.yml/application-pro.yml
 #不指定则不是springboot项目或直接使用application.yml
@@ -162,10 +163,6 @@ if [ -z "${JAR_NAME}" ] ; then
 		echo -e '在'${path}'下未找到可执行jar文件！'
 		exit 1 
 	fi
-fi
-#如果未指定虚拟机参数，默认处理
-if [ -z "${VM_OPTIONS}" ] ; then
-	VM_OPTIONS="-Xms256m -Xmx256m"
 fi
 
 #如果指定springboot配置文件
