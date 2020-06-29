@@ -107,6 +107,6 @@ mybatis-plus:
 logging:
     config: classpath:logback-spring.xml
 log:
-    path: /Users/liming/work/logs
+    path: /work/logs
     appender: CONSOLE
     level: INFO    
