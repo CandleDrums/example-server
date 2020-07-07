@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableAsync
-@EnableFeignClients("com.cds")
+@EnableFeignClients("com.cds.api")
 @ComponentScan(basePackages = {"com.cds"})
 @MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
 @Slf4j
