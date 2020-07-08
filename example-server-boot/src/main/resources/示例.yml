@@ -90,6 +90,7 @@ spring:
         serialization:
             FAIL_ON_EMPTY_BEANS: false
 ##############spring 配置结束##############
+#加密encryptor
 jasypt:
     encryptor:
         password: www.candledrums.com
@@ -97,7 +98,6 @@ jasypt:
 mybatis-plus:
     mapper-locations: classpath:mapper/**/*.xml
     typeAliasesPackage: com.cds.example.dep.dal.model
-#加密encryptor
 #数据库大写下划线转换
     configuration:
         map-underscore-to-camel-case: true
