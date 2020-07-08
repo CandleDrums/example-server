@@ -7,4 +7,4 @@ apollo:
         enabled: true
         eagerLoad:
             enabled: true
-    namespaces: application-global,application
+    namespaces: application-server-global,application
