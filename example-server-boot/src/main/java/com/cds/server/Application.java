@@ -18,8 +18,6 @@ import org.springframework.context.annotation.ComponentScan;
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * @Description 启动项目
  * @Notes 未填写备注
@@ -27,12 +25,11 @@ import lombok.extern.slf4j.Slf4j;
  * @Date [date]
  */
 @EnableEncryptableProperties
-@EnableDiscoveryClient
 @SpringBootApplication
-@EnableFeignClients("com.cds")
+@EnableDiscoveryClient
+@EnableFeignClients(basePackages = {"com.cds"})
 @ComponentScan(basePackages = {"com.cds"})
 @MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
-@Slf4j
 @EnableApolloConfig
 public class Application {
 
