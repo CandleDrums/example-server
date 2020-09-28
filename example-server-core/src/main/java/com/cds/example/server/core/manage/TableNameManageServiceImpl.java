@@ -51,7 +51,7 @@ public class TableNameManageServiceImpl extends GeneralManageServiceImpl<TableNa
     }
 
     @Override
-    protected GeneralService<TableNameVO, TableNameDO> getService() {
+    protected GeneralService<TableNameVO> getService() {
         return tableNameService;
     }
 

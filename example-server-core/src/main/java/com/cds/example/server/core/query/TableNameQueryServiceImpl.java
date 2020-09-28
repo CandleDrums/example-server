@@ -62,8 +62,9 @@ public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableName
     }
 
     @Override
-    protected GeneralService<TableNameVO, TableNameDO> getService() {
+    protected GeneralService<TableNameVO> getService() {
         return tableNameService;
     }
+
 
 }
