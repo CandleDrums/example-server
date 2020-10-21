@@ -24,7 +24,6 @@ import com.cds.base.common.page.PageResult;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.core.impl.GeneralQueryServiceImpl;
 import com.cds.example.dep.biz.service.TableNameService;
-import com.cds.example.dep.dal.model.TableNameDO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -47,11 +46,6 @@ public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableName
     }
 
     @Override
-    public ResponseResult<Boolean> contains(@RequestBody @NotNull TableNameVO tableName) {
-        return super.contains(tableName);
-    }
-
-    @Override
     public ResponseResult<List<TableNameVO>> queryAll(@RequestBody @NotNull TableNameVO tableName) {
         return super.queryAll(tableName);
     }
@@ -65,6 +59,5 @@ public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableName
     protected GeneralService<TableNameVO> getService() {
         return tableNameService;
     }
-
 
 }
