@@ -8,6 +8,7 @@
 package com.cds.example.server.core.manage;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
@@ -18,9 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cds.api.example.manage.TableNameManageService;
 import com.cds.api.example.model.TableNameVO;
-import com.cds.base.biz.service.GeneralService;
+import com.cds.base.biz.service.BaseService;
 import com.cds.base.common.result.ResponseResult;
-import com.cds.base.core.impl.general.GeneralManageServiceImpl;
+import com.cds.base.core.impl.BaseManageServiceImpl;
 import com.cds.example.dep.biz.service.TableNameService;
 
 /**
@@ -30,8 +31,7 @@ import com.cds.example.dep.biz.service.TableNameService;
  * @Date [date]
  */
 @RestController
-public class TableNameManageServiceImpl extends GeneralManageServiceImpl<TableNameVO>
-    implements TableNameManageService {
+public class TableNameManageServiceImpl extends BaseManageServiceImpl<TableNameVO> implements TableNameManageService {
 
     @Autowired
     private TableNameService tableNameService;
@@ -52,8 +52,12 @@ public class TableNameManageServiceImpl extends GeneralManageServiceImpl<TableNa
     }
 
     @Override
-    protected GeneralService<TableNameVO> getService() {
-        return tableNameService;
+    public ResponseResult<Integer> deleteAll(@RequestBody @NotNull List<Serializable> numList) {
+        return super.deleteAll(numList);
     }
 
+    @Override
+    protected BaseService<TableNameVO> getService() {
+        return tableNameService;
+    }
 }

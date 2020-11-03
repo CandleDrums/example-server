@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cds.api.example.model.TableNameVO;
 import com.cds.api.example.query.TableNameQueryService;
-import com.cds.base.biz.service.GeneralService;
+import com.cds.base.biz.service.BaseService;
 import com.cds.base.common.page.Page;
 import com.cds.base.common.page.PageResult;
 import com.cds.base.common.result.ResponseResult;
-import com.cds.base.core.impl.general.GeneralQueryServiceImpl;
+import com.cds.base.core.impl.BaseQueryServiceImpl;
 import com.cds.example.dep.biz.service.TableNameService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +36,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @RestController
 @Slf4j
-public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableNameVO> implements TableNameQueryService {
+public class TableNameQueryServiceImpl extends BaseQueryServiceImpl<TableNameVO> implements TableNameQueryService {
 
     @Autowired
     private TableNameService tableNameService;
@@ -57,7 +57,7 @@ public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableName
     }
 
     @Override
-    protected GeneralService<TableNameVO> getService() {
+    protected BaseService<TableNameVO> getService() {
         return tableNameService;
     }
 
