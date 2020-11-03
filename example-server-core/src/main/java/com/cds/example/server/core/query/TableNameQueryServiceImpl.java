@@ -7,6 +7,7 @@
  */
 package com.cds.example.server.core.query;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
@@ -41,7 +42,7 @@ public class TableNameQueryServiceImpl extends GeneralQueryServiceImpl<TableName
     private TableNameService tableNameService;
 
     @Override
-    public ResponseResult<TableNameVO> detail(@RequestParam(value = "num", required = true) @NotNull String num) {
+    public ResponseResult<TableNameVO> detail(@RequestParam(value = "num", required = true) @NotNull Serializable num) {
         return super.detail(num);
     }
 

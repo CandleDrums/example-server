@@ -7,6 +7,8 @@
  */
 package com.cds.example.server.core.manage;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +47,7 @@ public class TableNameManageServiceImpl extends GeneralManageServiceImpl<TableNa
     }
 
     @Override
-    public ResponseResult<Boolean> delete(@RequestParam(value = "num", required = true) @NotNull String num) {
+    public ResponseResult<Boolean> delete(@RequestParam(value = "num", required = true) @NotNull Serializable num) {
         return super.delete(num);
     }
 
