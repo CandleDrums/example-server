@@ -22,7 +22,7 @@ import com.cds.base.biz.service.GeneralService;
 import com.cds.base.common.page.Page;
 import com.cds.base.common.page.PageResult;
 import com.cds.base.common.result.ResponseResult;
-import com.cds.base.core.impl.GeneralQueryServiceImpl;
+import com.cds.base.core.impl.general.GeneralQueryServiceImpl;
 import com.cds.example.dep.biz.service.TableNameService;
 
 import lombok.extern.slf4j.Slf4j;

@@ -18,9 +18,8 @@ import com.cds.api.example.manage.TableNameManageService;
 import com.cds.api.example.model.TableNameVO;
 import com.cds.base.biz.service.GeneralService;
 import com.cds.base.common.result.ResponseResult;
-import com.cds.base.core.impl.GeneralManageServiceImpl;
+import com.cds.base.core.impl.general.GeneralManageServiceImpl;
 import com.cds.example.dep.biz.service.TableNameService;
-import com.cds.example.dep.dal.model.TableNameDO;
 
 /**
  * @Description [name]管理Service实现
@@ -36,8 +35,8 @@ public class TableNameManageServiceImpl extends GeneralManageServiceImpl<TableNa
     private TableNameService tableNameService;
 
     @Override
-    public ResponseResult<TableNameVO> add(@RequestBody @NotNull TableNameVO tableName) {
-        return super.add(tableName);
+    public ResponseResult<TableNameVO> save(@RequestBody @NotNull TableNameVO tableName) {
+        return super.save(tableName);
     }
 
     @Override
