@@ -13,8 +13,6 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cds.api.example.model.TableNameVO;
@@ -42,17 +40,17 @@ public class TableNameQueryServiceImpl extends BaseQueryServiceImpl<TableNameVO>
     private TableNameService tableNameService;
 
     @Override
-    public ResponseResult<TableNameVO> detail(@RequestParam(value = "num", required = true) @NotNull Serializable num) {
+    public ResponseResult<TableNameVO> detail(@NotNull Serializable num) {
         return super.detail(num);
     }
 
     @Override
-    public ResponseResult<List<TableNameVO>> queryAll(@RequestBody @NotNull TableNameVO tableName) {
+    public ResponseResult<List<TableNameVO>> queryAll(@NotNull TableNameVO tableName) {
         return super.queryAll(tableName);
     }
 
     @Override
-    public ResponseResult<PageResult<TableNameVO>> queryPagingList(@RequestBody @NotNull Page<TableNameVO> page) {
+    public ResponseResult<PageResult<TableNameVO>> queryPagingList(@NotNull Page<TableNameVO> page) {
         return super.queryPagingList(page);
     }
 
