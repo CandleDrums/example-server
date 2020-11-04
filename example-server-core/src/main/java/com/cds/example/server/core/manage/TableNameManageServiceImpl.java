@@ -8,6 +8,7 @@
 package com.cds.example.server.core.manage;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
@@ -36,6 +37,11 @@ public class TableNameManageServiceImpl extends BaseManageServiceImpl<TableNameV
     @Override
     public ResponseResult<TableNameVO> save(@NotNull TableNameVO tableName) {
         return super.save(tableName);
+    }
+
+    @Override
+    public ResponseResult<Integer> saveAll(@NotNull List<TableNameVO> valueList) {
+        return super.saveAll(valueList);
     }
 
     @Override

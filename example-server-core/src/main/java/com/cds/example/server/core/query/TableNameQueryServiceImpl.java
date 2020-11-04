@@ -24,8 +24,6 @@ import com.cds.base.common.result.ResponseResult;
 import com.cds.base.core.impl.BaseQueryServiceImpl;
 import com.cds.example.dep.biz.service.TableNameService;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * @Description [name]查询Service实现
  * @Notes 未填写备注
@@ -33,7 +31,6 @@ import lombok.extern.slf4j.Slf4j;
  * @Date [date]
  */
 @RestController
-@Slf4j
 public class TableNameQueryServiceImpl extends BaseQueryServiceImpl<TableNameVO> implements TableNameQueryService {
 
     @Autowired
@@ -45,7 +42,7 @@ public class TableNameQueryServiceImpl extends BaseQueryServiceImpl<TableNameVO>
     }
 
     @Override
-    public ResponseResult<List<TableNameVO>> queryAll(@NotNull TableNameVO tableName) {
+    public ResponseResult<List<TableNameVO>> queryAll(TableNameVO tableName) {
         return super.queryAll(tableName);
     }
 
