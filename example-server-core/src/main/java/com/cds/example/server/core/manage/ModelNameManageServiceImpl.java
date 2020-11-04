@@ -1,7 +1,7 @@
 /**
  * @Project example-server-core
  * @package com.cds.example.server.core.manage
- * @Class TableNameManageServiceImpl.java
+ * @Class ModelNameManageServiceImpl.java
  * @Date [date]
  * @Copyright [copyright]
  */
@@ -15,12 +15,12 @@ import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cds.api.example.manage.TableNameManageService;
-import com.cds.api.example.model.TableNameVO;
+import com.cds.api.example.manage.ModelNameManageService;
+import com.cds.api.example.model.ModelNameVO;
 import com.cds.base.biz.service.BaseService;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.core.impl.BaseManageServiceImpl;
-import com.cds.example.dep.biz.service.TableNameService;
+import com.cds.example.dep.biz.service.ModelNameService;
 
 /**
  * @Description [name]管理Service实现
@@ -29,23 +29,23 @@ import com.cds.example.dep.biz.service.TableNameService;
  * @Date [date]
  */
 @RestController
-public class TableNameManageServiceImpl extends BaseManageServiceImpl<TableNameVO> implements TableNameManageService {
+public class ModelNameManageServiceImpl extends BaseManageServiceImpl<ModelNameVO> implements ModelNameManageService {
 
     @Autowired
-    private TableNameService tableNameService;
+    private ModelNameService tableNameService;
 
     @Override
-    public ResponseResult<TableNameVO> save(@NotNull TableNameVO tableName) {
+    public ResponseResult<ModelNameVO> save(@NotNull ModelNameVO tableName) {
         return super.save(tableName);
     }
 
     @Override
-    public ResponseResult<Integer> saveAll(@NotNull List<TableNameVO> valueList) {
+    public ResponseResult<Integer> saveAll(@NotNull List<ModelNameVO> valueList) {
         return super.saveAll(valueList);
     }
 
     @Override
-    public ResponseResult<TableNameVO> modify(@NotNull TableNameVO tableName) {
+    public ResponseResult<ModelNameVO> modify(@NotNull ModelNameVO tableName) {
         return super.modify(tableName);
     }
 
@@ -55,7 +55,7 @@ public class TableNameManageServiceImpl extends BaseManageServiceImpl<TableNameV
     }
 
     @Override
-    protected BaseService<TableNameVO> getService() {
+    protected BaseService<ModelNameVO> getService() {
         return tableNameService;
     }
 }
