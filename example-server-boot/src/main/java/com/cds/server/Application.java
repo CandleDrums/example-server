@@ -42,7 +42,6 @@ public class Application {
         // 启动
         springApplication.run(args);
         // 启动成功
-
         System.out.println(" ____  ____  __   ____  ____    ____  _  _   ___  ___  ____  ____  ____ ");
         System.out.println("/ ___)(_  _)/ _\\ (  _ \\(_  _)  / ___)/ )( \\ / __)/ __)(  __)/ ___)/ ___)");
         System.out.println("\\___ \\  )( /    \\ )   /  )(    \\___ \\) \\/ (( (__( (__  ) _) \\___ \\\\___ \\");
