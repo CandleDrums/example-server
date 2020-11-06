@@ -50,8 +50,8 @@ public class ModelNameManageServiceImpl extends BaseManageServiceImpl<ModelNameV
     }
 
     @Override
-    public ResponseResult<Boolean> delete(@NotNull Serializable num) {
-        return super.delete(num);
+    public ResponseResult<Boolean> delete(@NotNull Serializable pk) {
+        return super.delete(pk);
     }
 
     @Override

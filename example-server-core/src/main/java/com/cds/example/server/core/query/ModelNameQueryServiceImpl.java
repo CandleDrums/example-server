@@ -37,8 +37,8 @@ public class ModelNameQueryServiceImpl extends BaseQueryServiceImpl<ModelNameVO>
     private ModelNameService tableNameService;
 
     @Override
-    public ResponseResult<ModelNameVO> detail(@NotNull Serializable num) {
-        return super.detail(num);
+    public ResponseResult<ModelNameVO> detail(@NotNull Serializable pk) {
+        return super.detail(pk);
     }
 
     @Override
