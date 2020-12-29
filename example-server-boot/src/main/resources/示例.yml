@@ -109,3 +109,13 @@ log:
     path: /work/logs
     appender: CONSOLE
     level: INFO    
+mapper:
+    identity: MYSQL
+    not-empty: false
+    mappers: com.com.cds.base.dal.dao.BaseDAO
+pagehelper:
+    helper-dialect: mysql
+    reasonable: false
+    pageSizeZero: false
+    support-methods-arguments: true
+    params: count=countSql
