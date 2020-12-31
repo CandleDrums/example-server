@@ -7,7 +7,6 @@
  */
 package com.cds.server;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +16,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
+
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @Description 启动项目

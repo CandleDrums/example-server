@@ -19,7 +19,6 @@ import com.cds.api.example.model.ModelNameVO;
 import com.cds.api.example.query.ModelNameQueryService;
 import com.cds.base.biz.service.BaseService;
 import com.cds.base.common.page.Page;
-import com.cds.base.common.page.PageResult;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.core.impl.BaseQueryServiceImpl;
 import com.cds.example.dep.biz.service.ModelNameService;
@@ -47,7 +46,7 @@ public class ModelNameQueryServiceImpl extends BaseQueryServiceImpl<ModelNameVO>
     }
 
     @Override
-    public ResponseResult<PageResult<ModelNameVO>> queryPagingList(@NotNull Page<ModelNameVO> page) {
+    public ResponseResult<Page<ModelNameVO>> queryPagingList(@NotNull Page<ModelNameVO> page) {
         return super.queryPagingList(page);
     }
 
