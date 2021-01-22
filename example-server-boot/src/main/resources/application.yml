@@ -2,7 +2,7 @@
 app:
     id: example-server
 apollo:
-    meta: http://182.92.152.103:7777
+    meta: http://127.0.0.1:7777
     bootstrap:
         enabled: true
         eagerLoad:
