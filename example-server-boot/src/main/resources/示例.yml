@@ -90,19 +90,30 @@ spring:
         serialization:
             FAIL_ON_EMPTY_BEANS: false
 ##############spring 配置结束##############
+feign: 
+  hystrix: 
+    enabled: true 
+#hystrix超时时间配置 （如果不配置的话默认是1000毫秒超时）
+hystrix: 
+  command: 
+    default: 
+      execution: 
+        isolation: 
+          thread: 
+            timeoutInMilliseconds: 5000
 #加密encryptor
 jasypt:
     encryptor:
         password: www.candledrums.com
 #mybaits-plus配置，修改主键类型，mapper.xml、type 别名等
-mybatis-plus:
-    mapper-locations: classpath:mapper/**/*.xml
-    typeAliasesPackage: com.cds.example.dep.dal.model
+#mybatis-plus:
+#    mapper-locations: classpath:mapper/**/*.xml
+#    typeAliasesPackage: com.cds.example.dep.dal.model
 #数据库大写下划线转换
-    configuration:
-        map-underscore-to-camel-case: true
+#    configuration:
+#        map-underscore-to-camel-case: true
 #capital-mode: true
-        cache-enabled: true
+#        cache-enabled: true
 logging:
     config: classpath:logback-spring.xml
 log:

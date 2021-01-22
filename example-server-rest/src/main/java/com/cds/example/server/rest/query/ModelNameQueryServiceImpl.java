@@ -5,7 +5,7 @@
  * @Date [date]
  * @Copyright [copyright]
  */
-package com.cds.example.server.core.query;
+package com.cds.example.server.rest.query;
 
 import java.io.Serializable;
 import java.util.List;
@@ -20,7 +20,7 @@ import com.cds.api.example.query.ModelNameQueryService;
 import com.cds.base.biz.service.BaseService;
 import com.cds.base.common.page.Page;
 import com.cds.base.common.result.ResponseResult;
-import com.cds.base.core.impl.BaseQueryServiceImpl;
+import com.cds.base.rest.impl.BaseQueryServiceImpl;
 import com.cds.example.dep.biz.service.ModelNameService;
 
 /**
@@ -37,6 +37,12 @@ public class ModelNameQueryServiceImpl extends BaseQueryServiceImpl<ModelNameVO>
 
     @Override
     public ResponseResult<ModelNameVO> detail(@NotNull Serializable pk) {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         return super.detail(pk);
     }
 

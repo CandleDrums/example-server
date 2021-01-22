@@ -12,7 +12,7 @@
 	<packaging>pom</packaging>
 	<name>example-server</name>
 	<modules>
-		<module>example-server-core</module>
+		<module>example-server-rest</module>
 		<module>example-server-boot</module>
 	</modules>
 	<properties>
@@ -28,7 +28,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.candledrums.example</groupId>
-				<artifactId>example-server-core</artifactId>
+				<artifactId>example-server-rest</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

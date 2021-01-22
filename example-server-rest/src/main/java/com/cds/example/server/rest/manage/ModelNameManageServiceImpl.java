@@ -5,7 +5,7 @@
  * @Date [date]
  * @Copyright [copyright]
  */
-package com.cds.example.server.core.manage;
+package com.cds.example.server.rest.manage;
 
 import java.io.Serializable;
 import java.util.List;
@@ -19,7 +19,7 @@ import com.cds.api.example.manage.ModelNameManageService;
 import com.cds.api.example.model.ModelNameVO;
 import com.cds.base.biz.service.BaseService;
 import com.cds.base.common.result.ResponseResult;
-import com.cds.base.core.impl.BaseManageServiceImpl;
+import com.cds.base.rest.impl.BaseManageServiceImpl;
 import com.cds.example.dep.biz.service.ModelNameService;
 
 /**
