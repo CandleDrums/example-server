@@ -13,6 +13,7 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cds.api.example.model.ModelNameVO;
@@ -36,18 +37,23 @@ public class ModelNameQueryServiceImpl extends BaseQueryServiceImpl<ModelNameVO>
     private ModelNameService tableNameService;
 
     @Override
-    public ResponseResult<ModelNameVO> detail(@NotNull Serializable pk) {
+    public ResponseResult<ModelNameVO> detail(@RequestParam("pk") @NotNull Serializable pk) {
         return super.detail(pk);
     }
 
     @Override
-    public ResponseResult<List<ModelNameVO>> queryAll(ModelNameVO tableName) {
-        return super.queryAll(tableName);
+    public ResponseResult<List<ModelNameVO>> query(ModelNameVO tableName) {
+        return super.query(tableName);
     }
 
     @Override
-    public ResponseResult<Page<ModelNameVO>> queryPagingList(@NotNull Page<ModelNameVO> page) {
-        return super.queryPagingList(page);
+    public ResponseResult<ModelNameVO> queryUnique(@NotNull ModelNameVO params) {
+        return super.queryUnique(params);
+    }
+
+    @Override
+    public ResponseResult<Page<ModelNameVO>> queryPage(@NotNull Page<ModelNameVO> page) {
+        return super.queryPage(page);
     }
 
     @Override

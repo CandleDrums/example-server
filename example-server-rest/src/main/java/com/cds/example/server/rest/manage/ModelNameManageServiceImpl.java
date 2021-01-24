@@ -13,6 +13,7 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cds.api.example.manage.ModelNameManageService;
@@ -50,7 +51,7 @@ public class ModelNameManageServiceImpl extends BaseManageServiceImpl<ModelNameV
     }
 
     @Override
-    public ResponseResult<Boolean> delete(@NotNull Serializable pk) {
+    public ResponseResult<Boolean> delete(@RequestParam("pk") @NotNull Serializable pk) {
         return super.delete(pk);
     }
 
