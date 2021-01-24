@@ -37,12 +37,6 @@ public class ModelNameQueryServiceImpl extends BaseQueryServiceImpl<ModelNameVO>
 
     @Override
     public ResponseResult<ModelNameVO> detail(@NotNull Serializable pk) {
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
         return super.detail(pk);
     }
 
