@@ -11,11 +11,9 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 import tk.mybatis.spring.annotation.MapperScan;
@@ -32,8 +30,8 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableFeignClients(basePackages = {"com.cds"})
 @ComponentScan(basePackages = {"com.cds"})
 @MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
-@EnableApolloConfig
-@EnableHystrix
+// Apollo配置
+// @EnableApolloConfig
 public class Application {
 
     public static void main(String[] args) {
@@ -45,10 +43,11 @@ public class Application {
         // 启动
         springApplication.run(args);
         // 启动成功
-        System.out.println(" ____  ____  __   ____  ____    ____  _  _   ___  ___  ____  ____  ____ ");
-        System.out.println("/ ___)(_  _)/ _\\ (  _ \\(_  _)  / ___)/ )( \\ / __)/ __)(  __)/ ___)/ ___)");
-        System.out.println("\\___ \\  )( /    \\ )   /  )(    \\___ \\) \\/ (( (__( (__  ) _) \\___ \\\\___ \\");
-        System.out.println("(____/ (__)\\_/\\_/(__\\_) (__)   (____/\\____/ \\___)\\___)(____)(____/(____/");
-
+        System.out.println("------------------------------------------------");
+        System.out.println("  ___   _   _    ___    ___    ___   ___   ___ ");
+        System.out.println(" / __| | | | |  / __|  / __|  / _ \\ / __| / __|");
+        System.out.println(" \\__ \\ | |_| | | (__  | (__  |  __/ \\__ \\ \\__ \\");
+        System.out.println(" |___/  \\__,_|  \\___|  \\___|  \\___| |___/ |___/");
+        System.out.println("------------------------------------------------");
     }
 }
