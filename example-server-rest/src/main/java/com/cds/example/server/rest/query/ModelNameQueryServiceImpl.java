@@ -24,6 +24,8 @@ import com.cds.base.common.result.ResponseResult;
 import com.cds.base.rest.impl.BaseQueryServiceImpl;
 import com.cds.example.dep.biz.service.ModelNameService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @Description [name]查询Service实现
  * @Notes 未填写备注
@@ -31,6 +33,7 @@ import com.cds.example.dep.biz.service.ModelNameService;
  * @Date [date]
  */
 @RestController
+@Slf4j
 public class ModelNameQueryServiceImpl extends BaseQueryServiceImpl<ModelNameVO> implements ModelNameQueryService {
 
     @Autowired

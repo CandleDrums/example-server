@@ -10,6 +10,7 @@ package com.cds.server;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
@@ -27,11 +28,12 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableEncryptableProperties
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"com.cds"})
+@EnableFeignClients(basePackages = {"com.cds.api"})
 @ComponentScan(basePackages = {"com.cds"})
 @MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
 // Apollo配置
 // @EnableApolloConfig
+@EnableCaching
 public class Application {
 
     public static void main(String[] args) {
@@ -50,4 +52,5 @@ public class Application {
         System.out.println(" |___/  \\__,_|  \\___|  \\___|  \\___| |___/ |___/");
         System.out.println("------------------------------------------------");
     }
+
 }

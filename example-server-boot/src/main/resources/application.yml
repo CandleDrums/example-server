@@ -30,38 +30,11 @@
 # 当有多个集群是配置集群名称，默认为default，当配置集群之后，如果Apollo在指定集群获取不到配置数据，则还会去默认集群获取
 #5.-Dapollo.cluster=default
 #--------------------------------------------------------------------------------------------------------
+#如果使用Apollo，以下配置可以删除
 server:
-  port: 9998
+  port: 9999
   
-jasypt:
-  encryptor:
-    password: www.candledrums.com
-log:
-  appender: CONSOLE
-  level: INFO
-  path: /Users/liming/work/logs
-logging:
-  config: classpath:logback-spring.xml
-mapper:
-  identity: MYSQL
-  mappers: com.cds.base.dal.dao.BaseDAO
-  not-empty: false
-mybatis:
-  mapper-locations: classpath:mapper/**/*.xml
-  type-aliases-package: com.cds.example.dep.dal.model
-mybatis-plus:
-  configuration:
-    cache-enabled: true
-    map-underscore-to-camel-case: true
-  mapper-locations: classpath:mapper/**/*.xml
-  typeAliasesPackage: com.cds.example.dep.dal.model
-pagehelper:
-  helper-dialect: mysql
-  pageSizeZero: false
-  params: count=countSql
-  reasonable: false
-  support-methods-arguments: true
-
+#spring配置
 spring:
   application:
     name: example-server
@@ -82,7 +55,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       auto-commit: true
-      connection-test-query: SELECT 1
+      #connection-test-query: SELECT 1
       connection-timeout: 30000
       idle-timeout: 600000
       max-lifetime: 1800000
@@ -91,8 +64,20 @@ spring:
       pool-name: ${spring.application.name}-HikariCP
     password: 1234qwer1234
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://182.92.152.103:3306/example?useAffectedRows=true
+    url: jdbc:mysql://182.92.152.103:3306/example?useAffectedRows=true&queryInterceptors=brave.mysql8.TracingQueryInterceptor&exceptionInterceptors=brave.mysql8.TracingExceptionInterceptor&zipkinServiceName=example
     username: root
+  redis:
+    host: 123.56.227.95
+    port: 6614
+    database: 1
+    password: AH2u64OX[K-/N91Ms
+    lettuce: # lettuce基于netty，线程安全，支持并发
+      pool:
+        max-active: 50
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+      
   jackson:
     date-format: yyyy-MM-dd hh:mm:ss
     serialization:
@@ -100,3 +85,84 @@ spring:
     time-zone: GMT+8
   main:
     allow-bean-definition-overriding: true
+  sleuth:
+    enabled: true
+    sampler:
+      probability: 1  # 设置抽样采集率为100%，默认为0.1，即10%   
+    async:
+      enabled: true
+    feign:
+      enabled: true
+    rpc:
+      enabled: true
+    circuitbreaker:
+      enabled: true
+    function:
+      enabled: true
+    http:
+      enabled: true
+      
+#zipkin上报   
+  zipkin:
+    base-url: http://182.92.152.103:9411
+    sender:
+        type: web
+    enabled: true
+  #security:
+    #user:
+      #name: actuator
+      #password: actuator
+      #roles: ACTUATOR_ADMIN
+      
+#加密
+jasypt:
+  encryptor:
+    password: www.candledrums.com
+    
+#mapper配置
+mapper:
+  identity: MYSQL
+  mappers: com.cds.base.dal.dao.BaseDAO
+  not-empty: false
+  
+#分页插件
+pagehelper:
+  helper-dialect: mysql
+  pageSizeZero: false
+  params: count=countSql
+  reasonable: false
+  support-methods-arguments: true
+
+#信息
+info:
+  app:
+    name: ${spring.application.name}
+    description: example server
+    version: 1.0
+    encoding: UTF-8
+    java:
+      version: JDK 1.8
+#监控
+management:
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+    metrics:
+      enabled: true
+  endpoints:
+    jmx:
+      exposure:
+        include: health,info
+    web:
+      exposure:
+        exclude: env
+        include: health,info,beans,auditevents,httptrace,mappings,scheduledtasks,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+#日志
+logging:
+  config: classpath:logback-spring.xml
