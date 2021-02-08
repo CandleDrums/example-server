@@ -13,9 +13,11 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cds.api.example.constant.APIConstants;
 import com.cds.api.example.model.ModelNameVO;
 import com.cds.api.example.query.ModelNameQueryService;
 import com.cds.base.biz.service.BaseService;
@@ -40,6 +42,7 @@ public class ModelNameQueryServiceImpl extends BaseQueryServiceImpl<ModelNameVO>
     private ModelNameService tableNameService;
 
     @Override
+    @Cacheable(value = APIConstants.CACHE_PREFIX + "::(detail)::{pk}", key = "#pk")
     public ResponseResult<ModelNameVO> detail(@RequestParam("pk") @NotNull Serializable pk) {
         return super.detail(pk);
     }
