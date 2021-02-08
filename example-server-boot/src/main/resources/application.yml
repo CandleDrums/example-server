@@ -64,7 +64,7 @@ spring:
       pool-name: ${spring.application.name}-HikariCP
     password: 1234qwer1234
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://182.92.152.103:3306/example?useAffectedRows=true&queryInterceptors=brave.mysql8.TracingQueryInterceptor&exceptionInterceptors=brave.mysql8.TracingExceptionInterceptor&zipkinServiceName=example
+    url: jdbc:mysql://182.92.152.103:3306/example?useAffectedRows=true&queryInterceptors=brave.mysql8.TracingQueryInterceptor&exceptionInterceptors=brave.mysql8.TracingExceptionInterceptor&zipkinServiceName=example-server-mysql
     username: root
   redis:
     host: 123.56.227.95
