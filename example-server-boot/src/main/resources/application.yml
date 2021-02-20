@@ -38,6 +38,13 @@ server:
 spring:
   application:
     name: example-server
+  security:
+    user:
+      name: client
+      password: 1234qwer
+      roles:
+      - ADMIN
+      - CLIENT
   cloud:
     consul:
       discovery:

@@ -10,6 +10,7 @@ package com.cds.example.server.rest.query;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @RestController
 @Slf4j
+@RolesAllowed({"ADMIN", "CLIENT"})
 public class ModelNameQueryServiceImpl extends BaseQueryServiceImpl<ModelNameVO> implements ModelNameQueryService {
 
     @Autowired
