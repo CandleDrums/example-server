@@ -1,11 +1,11 @@
 /**
  * @Project example-server-core
- * @package com.cds.example.server.core.query
+ * @package com.cds.server.example.rest.query
  * @Class ModelNameQueryServiceImpl.java
  * @Date [date]
  * @Copyright [copyright]
  */
-package com.cds.example.server.rest.query;
+package com.cds.server.example.rest.query;
 
 import java.io.Serializable;
 import java.util.List;

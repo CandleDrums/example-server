@@ -1,11 +1,11 @@
 /**
  * @Project example-server-core
- * @package com.cds.example.server.core.manage
+ * @package com.cds.server.example.rest.manage
  * @Class ModelNameManageServiceImpl.java
  * @Date [date]
  * @Copyright [copyright]
  */
-package com.cds.example.server.rest.manage;
+package com.cds.server.example.rest.manage;
 
 import java.io.Serializable;
 import java.util.List;
