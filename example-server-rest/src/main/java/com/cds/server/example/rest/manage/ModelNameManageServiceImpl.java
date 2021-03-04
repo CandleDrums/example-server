@@ -21,7 +21,7 @@ import com.cds.api.example.model.ModelNameVO;
 import com.cds.base.biz.service.BaseService;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.rest.impl.BaseManageServiceImpl;
-import com.cds.example.dep.biz.service.ModelNameService;
+import com.cds.dep.example.biz.ModelNameService;
 
 /**
  * @Description [name]管理Service实现

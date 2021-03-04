@@ -38,13 +38,6 @@ server:
 spring:
   application:
     name: example-server
-  security:
-    user:
-      name: client
-      password: 1234qwer
-      roles:
-      - ADMIN
-      - CLIENT
   cloud:
     consul:
       discovery:
@@ -170,6 +163,21 @@ management:
     export:
       prometheus:
         enabled: true
+auth:
+  path:
+    skip:
+    - /api/**
+    - /inside/**
+    - /oauth/**
+    - /swagger-resources/**
+    - /**/swagger-ui.html
+    - /**/v2/api-docs
+    - /swagger/api-docs
+    - /**/*.css
+    - /**/*.js
+    - /**/*.html
+    - /webjars/**
+    - doc.html
 #日志
 logging:
   config: classpath:logback-spring.xml

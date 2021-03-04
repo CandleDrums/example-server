@@ -25,7 +25,7 @@ import com.cds.base.biz.service.BaseService;
 import com.cds.base.common.page.Page;
 import com.cds.base.common.result.ResponseResult;
 import com.cds.base.rest.impl.BaseQueryServiceImpl;
-import com.cds.example.dep.biz.service.ModelNameService;
+import com.cds.dep.example.biz.ModelNameService;
 
 import lombok.extern.slf4j.Slf4j;
 

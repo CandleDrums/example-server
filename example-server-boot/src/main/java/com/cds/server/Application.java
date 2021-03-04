@@ -31,7 +31,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = {"com.cds.api"})
 @ComponentScan(basePackages = {"com.cds"})
-@MapperScan(basePackages = {"com.cds.example.dep.dal.dao"})
+@MapperScan(basePackages = {"com.cds.dep.example.dal.dao"})
 // Apollo配置
 // @EnableApolloConfig
 @EnableCaching
