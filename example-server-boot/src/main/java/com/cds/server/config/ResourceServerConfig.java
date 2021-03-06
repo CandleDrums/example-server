@@ -19,6 +19,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
 import com.cds.api.auth.config.AuthPathConfig;
+import com.cds.api.example.constant.APIConstants;
 
 /**
  * 资源服务器配置，注解自动增加了一个类型为 OAuth2AuthenticationProcessingFilter 的过滤器链
@@ -30,7 +31,8 @@ import com.cds.api.auth.config.AuthPathConfig;
 @Configuration
 @EnableResourceServer
 @EnableWebSecurity
-public class DefaultOAuth2ResourceServiceAdapter extends ResourceServerConfigurerAdapter {
+public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+    private static final String RESOURCE_ID = APIConstants.APP_NAME;
 
     @Resource
     private AccessDeniedHandler defaultAccessDeniedHandler;
@@ -52,6 +54,7 @@ public class DefaultOAuth2ResourceServiceAdapter extends ResourceServerConfigure
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         super.configure(resources);
+        resources.resourceId(RESOURCE_ID);
         resources.tokenServices(tokenServices);
         resources.expressionHandler(expressionHandler);
         resources.accessDeniedHandler(defaultAccessDeniedHandler);
